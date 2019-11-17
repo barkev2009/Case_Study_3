@@ -11,14 +11,12 @@ months = ['январь', 'февраль', 'март', 'апрель', 'май'
           'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
 
 # Setting design elements
-dashes = '-' * (9 + max(maxes['months'], count_symbols(' месяц '))
-                + max(maxes['init_cap'], count_symbols(' инвестиций '))
-                + max(maxes['percs'], count_symbols(' сумма, % '))
-                + max(maxes['capital'], count_symbols(' капитал ')))
 month_block_width = max(maxes['months'], count_symbols(' месяц '))
 init_block_width = max(maxes['init_cap'], count_symbols(' инвестиций '))
 per_block_width = max(maxes['percs'], count_symbols(' сумма, % '))
 cap_block_width = max(maxes['capital'], count_symbols(' капитал '))
+dashes = '-' * (9 + month_block_width + init_block_width + per_block_width + cap_block_width)
+
 
 capital = initial_capital
 for year in range(years):
