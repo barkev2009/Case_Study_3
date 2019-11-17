@@ -1,6 +1,5 @@
 from numpy import count_nonzero
 
-
 def count_symbols(obj):
     answer = count_nonzero(list(obj.replace(' ', '1')))
     return answer

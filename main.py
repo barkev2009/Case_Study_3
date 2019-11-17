@@ -10,27 +10,34 @@ maxes = get_maxes(years, initial_capital, percent, investment_infusion)
 months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
           'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
 
+# Setting design elements
+dashes = '-' * (9 + max(maxes['months'], count_symbols(' месяц '))
+                 + max(maxes['init_cap'], count_symbols(' инвестиций '))
+                 + max(maxes['percs'], count_symbols(' сумма, % '))
+                 + max(maxes['capital'], count_symbols(' капитал ')))
+month_block_width = max(maxes['months'], count_symbols(' месяц '))
+init_block_width = max(maxes['init_cap'], count_symbols(' инвестиций '))
+per_block_width = max(maxes['percs'], count_symbols(' сумма, % '))
+cap_block_width = max(maxes['capital'], count_symbols(' капитал '))
+
 capital = initial_capital
 for year in range(years):
 
     # Header
     print('\n{} год'.format(year + 1))
 
-    print('-' * (9 + max(maxes['months'], count_symbols(' месяц '))
-                 + max(maxes['init_cap'], count_symbols(' инвестиций '))
-                 + max(maxes['percs'], count_symbols(' сумма, % '))
-                 + max(maxes['capital'], count_symbols(' капитал '))))
-    print_block(' ', max(maxes['months'], count_symbols(' месяц ')))
-    print_block(' основа ', max(maxes['init_cap'], count_symbols(' инвестиций ')))
-    print_block(' сумма, % ', max(maxes['percs'], count_symbols(' сумма, % ')))
-    print_block(' ', max(maxes['capital'], count_symbols(' капитал ')), end='|\n')
+    print(dashes)
+    print_block(' ', month_block_width)
+    print_block(' основа ', init_block_width)
+    print_block(' сумма, % ', per_block_width)
+    print_block(' ', cap_block_width, end='|\n')
 
-    print_block(' месяц ', max(maxes['months'], count_symbols(' месяц ')))
-    print_block(' инвестиций ', max(maxes['init_cap'], count_symbols(' инвестиций ')))
-    print_block(' за месяц ', max(maxes['percs'], count_symbols(' сумма, % ')))
-    print_block(' капитал ', max(maxes['capital'], count_symbols(' капитал ')), end='|\n')
+    print_block(' месяц ', month_block_width)
+    print_block(' инвестиций ', init_block_width)
+    print_block(' за месяц ', per_block_width)
+    print_block(' капитал ', cap_block_width, end='|\n')
 
-    print('-' * (9 + maxes['months'] + maxes['init_cap'] + maxes['percs'] + maxes['capital']))
+    print(dashes)
 
     for month in months:
         init_cap = capital
@@ -38,12 +45,12 @@ for year in range(years):
         capital += percs
 
         # Main body
-        print_block(str(month), max(maxes['months'], count_symbols(' месяц ')))
+        print_block(str(month), month_block_width)
         str_init = '{:,.2f}'.format(init_cap).replace(',', ' ')
-        print_block(str_init, max(maxes['init_cap'], count_symbols(' инвестиций ')))
+        print_block(str_init, init_block_width)
         str_percs = '{:,.2f}'.format(percs).replace(',', ' ')
-        print_block(str_percs, max(maxes['percs'], count_symbols(' сумма, % ')))
+        print_block(str_percs, per_block_width)
         str_cap = '{:,.2f}'.format(capital).replace(',', ' ')
-        print_block(str_cap, max(maxes['capital'], count_symbols(' капитал ')), end='|\n')
+        print_block(str_cap, cap_block_width, end='|\n')
         capital += investment_infusion
-    print('-' * (9 + maxes['months'] + maxes['init_cap'] + maxes['capital'] + maxes['percs']))
+    print(dashes)
