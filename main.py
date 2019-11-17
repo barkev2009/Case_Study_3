@@ -1,4 +1,5 @@
 from functions import *
+from matplotlib.pyplot import *
 
 years = int(input("Срок размещения капитала (лет): "))
 initial_capital = float(input("Начальный капитал ($): "))
@@ -19,6 +20,8 @@ dashes = '-' * (9 + month_block_width + init_block_width + per_block_width + cap
 
 
 capital = initial_capital
+x_vector = []
+y_vector = []
 for year in range(years):
 
     # Header
@@ -38,9 +41,11 @@ for year in range(years):
     print(dashes)
 
     for month in months:
+        x_vector.append('{} {}'.format(year, month))
         init_cap = capital
         percs = capital * percent / 100
         capital += percs
+        y_vector.append(capital)
 
         # Main body
         print_block(str(month), month_block_width)
@@ -52,3 +57,11 @@ for year in range(years):
         print_block(str_cap, cap_block_width, end='|\n')
         capital += investment_infusion
     print(dashes)
+
+# Plotting the capital growth
+fig, ax = subplots()
+ax.plot(x_vector, y_vector)
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_title('Рост капитала с течением времени', fontsize=15)
+show()
