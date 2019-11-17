@@ -12,7 +12,10 @@ months = ['январь', 'февраль', 'март', 'апрель', 'май'
 
 capital = initial_capital
 for year in range(years):
+
+    # Header
     print('\n{} год'.format(year + 1))
+
     print('-' * (9 + max(maxes['months'], count_symbols(' месяц '))
                  + max(maxes['init_cap'], count_symbols(' инвестиций '))
                  + max(maxes['percs'], count_symbols(' сумма, % '))
@@ -21,10 +24,12 @@ for year in range(years):
     print_block(' основа ', max(maxes['init_cap'], count_symbols(' инвестиций ')))
     print_block(' сумма, % ', max(maxes['percs'], count_symbols(' сумма, % ')))
     print_block(' ', max(maxes['capital'], count_symbols(' капитал ')), end='|\n')
+
     print_block(' месяц ', max(maxes['months'], count_symbols(' месяц ')))
     print_block(' инвестиций ', max(maxes['init_cap'], count_symbols(' инвестиций ')))
     print_block(' за месяц ', max(maxes['percs'], count_symbols(' сумма, % ')))
     print_block(' капитал ', max(maxes['capital'], count_symbols(' капитал ')), end='|\n')
+
     print('-' * (9 + maxes['months'] + maxes['init_cap'] + maxes['percs'] + maxes['capital']))
 
     for month in months:
@@ -32,6 +37,7 @@ for year in range(years):
         percs = capital * percent/100
         capital += percs
 
+        # Main body
         print_block(str(month), max(maxes['months'], count_symbols(' месяц ')))
         str_init = '{:,.2f}'.format(init_cap).replace(',', ' ')
         print_block(str_init, max(maxes['init_cap'], count_symbols(' инвестиций ')))
