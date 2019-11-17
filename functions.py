@@ -7,9 +7,17 @@ def print_block(obj, spaces, end=''):
 
 
 def get_maxes(years, initial_capital, percent, investment_infusion):
+    global init_cap, percs
+    months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+              'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+
+    mon_lists = []
+    for month in months:
+        mon_lists.append(2 + count_symbols(list(month)))
+
     capital = initial_capital
     for year in range(years):
-        for month in range(12):
+        for month in months:
             init_cap = capital
             percs = capital * percent/100
             capital += percs
@@ -20,6 +28,7 @@ def get_maxes(years, initial_capital, percent, investment_infusion):
     init_cap_sym = count_symbols(list(str_init.replace(' ', '1')))
     percs_sym = count_symbols(list(str_percs.replace(' ', '1')))
     capit_sym = count_symbols(list(str_cap.replace(' ', '1')))
-    maxes = [init_cap_sym, percs_sym, capit_sym]
+    max_month = max(mon_lists)
+    maxes = {'init_cap': init_cap_sym, 'percs': percs_sym, 'capital': capit_sym, 'months': max_month}
     return maxes
 
