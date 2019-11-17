@@ -1,5 +1,6 @@
 from numpy import *
-month = '1 394.19'
+ending = 5000*1.1
+month = ' апрель    '
 
-print(count_nonzero(list(month.replace(' ', '1'))), end=' ')
-print(5)
+print(count_nonzero(list(month.replace(' ', '1'))))
+print(ending)
