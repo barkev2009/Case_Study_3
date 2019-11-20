@@ -11,10 +11,12 @@ def print_block(obj, spaces, end=''):
     print(' ' * (spaces - count_symbols(obj)), end=end)
 
 
-def get_maxes(years, initial_capital, percent, investment_infusion):
+def get_maxes(years, initial_capital, percent, investment_infusion, lang):
     global init_cap, percs
-    months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
-              'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+    if lang == 'eng':
+        from ENG import months
+    elif lang == 'rus':
+        from RUS import months
 
     mon_lists = []
     for month in months:
