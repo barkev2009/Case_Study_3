@@ -1,10 +1,11 @@
 from functions import *
 from matplotlib.pyplot import *
 
-years = int(input("Срок размещения капитала (лет): "))
-initial_capital = float(input("Начальный капитал ($): "))
-percent = float(input("Процентная ставка (%/мес.): "))
-investment_infusion = float(input("Инвестиционные вливания ($/мес.): "))
+years = int(while_print('Срок размещения капитала (лет): ', 'Некорректный ввод, попробуйте еще раз!'))
+initial_capital = float(while_print('Начальный капитал ($): ', 'Некорректный ввод, попробуйте еще раз!'))
+percent = float(while_print('Процентная ставка (%/мес.): ', 'Некорректный ввод, попробуйте еще раз!'))
+investment_infusion = float(while_print('Инвестиционные вливания ($/мес.): ',
+                                        'Некорректный ввод, попробуйте еще раз!'))
 
 maxes = get_maxes(years, initial_capital, percent, investment_infusion)
 

@@ -1,5 +1,6 @@
 from numpy import count_nonzero
 
+
 def count_symbols(obj):
     answer = count_nonzero(list(obj.replace(' ', '1')))
     return answer
@@ -23,7 +24,7 @@ def get_maxes(years, initial_capital, percent, investment_infusion):
     for year in range(years):
         for month in months:
             init_cap = capital
-            percs = capital * percent/100
+            percs = capital * percent / 100
             capital += percs
             capital += investment_infusion
     str_init = '{:,.2f} '.format(init_cap).replace(',', ' ')
@@ -36,3 +37,22 @@ def get_maxes(years, initial_capital, percent, investment_infusion):
     maxes = {'init_cap': init_cap_sym, 'percs': percs_sym, 'capital': capit_sym, 'months': max_month}
     return maxes
 
+
+def isfloat(var):
+    try:
+        float(var)
+        return True
+    except ValueError:
+        return False
+
+
+def while_print(name=None, answer=None):
+    var = ''
+    while var == '':
+        var = input(name)
+        if isfloat(var):
+            return var
+        elif var == '' or var.isdigit() == False:
+            var = ''
+            print(answer)
+    return var

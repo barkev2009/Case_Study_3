@@ -1,12 +1,10 @@
-from numpy import *
-ending = 5000*1.1
-months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
-          'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+def isfloat(var):
+    try:
+        var = float(var)
+        return True
+    except ValueError:
+        return False
 
+a = '9.5'
 
-# print(count_nonzero(list(month.replace(' ', '1'))))
-mon_lists = []
-for month in months:
-    mon_lists.append(2 + count_nonzero(list(month)))
-
-print(mon_lists)
+print(isfloat(a))
