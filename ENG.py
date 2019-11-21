@@ -19,6 +19,7 @@ YEAR_ENG = 'Year {}'
 TIME_ENG = 'Time ->'
 CAP_ENG = 'Capital ->'
 CAP_GROWTH_ENG = 'Capital Growth with Time'
+FILE_NAME_ENG = 'Investment Plan'
 
 period_lit = PERIOD_ENG
 init_cap_lit = INIT_CAP_ENG
@@ -36,3 +37,4 @@ year_lit = YEAR_ENG
 time_lit =TIME_ENG
 cap_lit = CAP_ENG
 cap_growth = CAP_GROWTH_ENG
+file_name = FILE_NAME_ENG

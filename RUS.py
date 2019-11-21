@@ -19,6 +19,7 @@ YEAR_RUS = '{} год'
 TIME_RUS = 'Время ->'
 CAP_RUS = 'Капитал ->'
 CAP_GROWTH_RUS = 'Рост капитала с течением времени'
+FILE_NAME_RUS = 'Инвестиционная стратегия'
 
 period_lit = PERIOD_RUS
 init_cap_lit = INIT_CAP_RUS
@@ -36,3 +37,4 @@ year_lit = YEAR_RUS
 time_lit =TIME_RUS
 cap_lit = CAP_RUS
 cap_growth = CAP_GROWTH_RUS
+file_name = FILE_NAME_RUS

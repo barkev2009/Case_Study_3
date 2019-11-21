@@ -117,4 +117,6 @@ capital_list = np.array(capital_list).transpose()
 
 df = DataFrame(data=[year_list, month_list, init_cap_list, per_list, capital_list]).transpose()
 
-df.to_csv('file.csv', encoding='windows-1251', index=False, header=False)
+name = file_name + '.csv'
+
+df.to_csv(name, encoding='windows-1251', index=False, header=False)
