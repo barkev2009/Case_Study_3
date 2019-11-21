@@ -14,7 +14,7 @@ CAP_BLOCK_RUS = ' Капитал '
 BASE_RUS = ' Основа '
 DUR_MONTH_RUS = ' за месяц '
 
-YEAR_RUS = '\n{} год'
+YEAR_RUS = '{} год'
 
 TIME_RUS = 'Время ->'
 CAP_RUS = 'Капитал ->'

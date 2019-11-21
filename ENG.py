@@ -14,7 +14,7 @@ CAP_BLOCK_ENG = ' Capital '
 BASE_ENG = ' Investment '
 DUR_MONTH_ENG = ' over month '
 
-YEAR_ENG = '\nYear {}'
+YEAR_ENG = 'Year {}'
 
 TIME_ENG = 'Time ->'
 CAP_ENG = 'Capital ->'
