@@ -1,7 +1,5 @@
 from functions import *
 from matplotlib.pyplot import *
-import numpy as np
-from pandas import *
 
 langchoice = input('Пожалуйста, выберите язык. Please, choose the language. ')
 if langchoice.lower() == 'english' or langchoice.lower() == 'английский':
@@ -109,14 +107,6 @@ ax.set_ylabel(cap_lit)
 ax.set_title(cap_growth, fontsize=15)
 show()
 
-year_list = np.array(year_list)
-month_list = np.array(month_list)
-init_cap_list = np.array(init_cap_list)
-per_list = np.array(per_list)
-capital_list = np.array(capital_list)
-
-df = DataFrame(data=[year_list, month_list, init_cap_list, per_list, capital_list]).transpose()
-
 name = file_name + '.csv'
 
-df.to_csv(name, encoding='windows-1251', index=False, header=False)
+make_csv([year_list, month_list, init_cap_list, per_list, capital_list], name)

@@ -1,4 +1,5 @@
-from numpy import count_nonzero
+from numpy import count_nonzero, array
+from pandas import *
 
 
 def count_symbols(obj):
@@ -54,7 +55,16 @@ def while_print(name=None, answer=None):
         var = input(name)
         if isfloat(var):
             return var
-        elif var == '' or var.isdigit() == False:
+        elif var == '' or var.isdigit() is False:
             var = ''
             print(answer)
     return var
+
+
+def make_csv(data, filename):
+    data1 = []
+    for element in data:
+        element1 = array(element)
+        data1.append(element1)
+    df = DataFrame(data1).transpose()
+    df.to_csv(filename, encoding='windows-1251', index=False, header=False)
