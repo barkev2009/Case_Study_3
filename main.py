@@ -109,11 +109,11 @@ ax.set_ylabel(cap_lit)
 ax.set_title(cap_growth, fontsize=15)
 show()
 
-year_list = np.array(year_list).transpose()
-month_list = np.array(month_list).transpose()
-init_cap_list = np.array(init_cap_list).transpose()
-per_list = np.array(per_list).transpose()
-capital_list = np.array(capital_list).transpose()
+year_list = np.array(year_list)
+month_list = np.array(month_list)
+init_cap_list = np.array(init_cap_list)
+per_list = np.array(per_list)
+capital_list = np.array(capital_list)
 
 df = DataFrame(data=[year_list, month_list, init_cap_list, per_list, capital_list]).transpose()
 
