@@ -49,7 +49,7 @@ def isfloat(var):
         return False
 
 
-def while_print(name=None, answer=None):
+def while_print(name, answer):
     var = ''
     while var == '':
         var = input(name)
