@@ -1,3 +1,8 @@
+# Case-study #3
+# Developers: Kapinos A. (53%),
+# Kovshov G. (65%),
+# Pankova J. (40%)
+
 from functions import *
 from matplotlib.pyplot import *
 
